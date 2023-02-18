@@ -4,8 +4,8 @@
   "description": "API de l'application Krysto-go facilitant le recyclage des déchets plastiques,papier et de capsule de café au bureau",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
