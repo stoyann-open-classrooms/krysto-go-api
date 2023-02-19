@@ -24,7 +24,7 @@ If you are working with several versions of NodeJS, we recommend you install [nv
 
 ### 4.1 Possible endpoints
 
-This project includes four endpoints that you will be able to use: 
+This project includes five endpoints that you will be able to use: 
 
 - `http://localhost:8080/users` - listing all users in database. 
 

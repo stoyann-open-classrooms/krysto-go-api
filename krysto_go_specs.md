@@ -2,7 +2,7 @@
 
 Create the backend for a krysto-go app's. The frontend/UI will be created with React. The html/css template has been created and can be used as a reference for functionality. All of the functionality below needs to be fully implmented in this project.
 
-### Partners
+### User
 - List all partners in the database
    * Pagination
    * Select specific fields in result
@@ -25,7 +25,7 @@ Create the backend for a krysto-go app's. The frontend/UI will be created with R
   * Admin only
 
 
-### Collect
+### Collect Point
 - List all collects for partner
 - List all collects in general
   * Pagination, filtering, etc
@@ -37,6 +37,22 @@ Create the backend for a krysto-go app's. The frontend/UI will be created with R
   * Partner can create multiple collects
 - Update collect
   * staff only
+- Delete collect
+  * Owner only
+
+
+### Collect
+- List all collects for partner
+- List all collects in general
+  * Pagination, filtering, etc
+- Get single collect
+- Create new collect
+  * Authenticated users only
+  * Must have the role "partner" or "admin"
+  * Only the owner or an admin can create a collect for a collect-point
+  * Partner can create multiple collects
+- Update collect
+  * staff or admin only
 - Delete collect
   * Owner only
   

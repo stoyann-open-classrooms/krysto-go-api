@@ -1,0 +1,49 @@
+[
+    {
+      "_id": "637a2e4122b12690420041a1",
+      "collectPoint": "637a2e4122b12690420041c2"
+    },
+    {
+      "_id": "637a2e4122b12690420041a2",
+      "collectPoint": "637a2e4122b12690420041c2",
+      "status": "done"
+      
+    },
+    {
+      "_id": "637a2e4122b12690420041a3",
+      "collectPoint": "637a2e4122b12690420041c2",
+      "status": "done"
+      
+    },
+    {
+      "_id": "637a2e4122b12690420041a4",
+      "collectPoint": "637a2e4122b12690420041c3",
+      "status": "fail",
+      "remarque": "Entrprise fermée (vaccances)"
+      
+    },
+  
+    {
+      "_id": "637a2e4122b12690420041a5",
+      "collectPoint": "637a2e4122b12690420041c3"
+      
+    },
+    {
+      "_id": "637a2e4122b12690420041a6",
+      "collectPoint": "637a2e4122b12690420041c3"
+     
+    },
+  
+    {
+      "_id": "637a2e4122b12690420041a7",
+      "collectPoint": "637a2e4122b12690420041c3"
+     
+    },
+    {
+      "_id": "637a2e4122b12690420041a8",
+      "collectPoint": "637a2e4122b12690420041c3"
+     
+    }
+  
+  ]
+  

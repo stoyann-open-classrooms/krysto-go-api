@@ -1,16 +1,17 @@
-const fs = require('fs');
-const mongoose = require('mongoose');
-const colors = require('colors');
-const dotenv = require('dotenv');
+const fs = require("fs");
+const mongoose = require("mongoose");
+const colors = require("colors");
+const dotenv = require("dotenv");
 
 // Load env vars
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: "./config/config.env" });
 
 // Load models
 
-
-
-
+const User = require("./models/User");
+const CollectPoint = require("./models/CollectPoint");
+const Collect = require('./models/Collect');
+const Message = require('./models/Message');
 // Connect to DB
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URI, {
@@ -19,21 +20,29 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Read JSON files
 
-// const users = JSON.parse(
-//   fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8')
-// );
+const users = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/users.json`, "utf-8")
+);
 
+const collectPoints = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/collectPoints.json`, "utf-8")
+);
+const collects = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/collects.json`, 'utf-8')
+);
 
-
+const messages = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/messages.json`, 'utf-8')
+);
 
 // Import into DB
 const importData = async () => {
   try {
-   
-   
-    // await User.create(users);
-    
-    console.log('Data Imported...'.green.inverse);
+    await User.create(users);
+    await CollectPoint.create(collectPoints);
+    await Collect.create(collects);
+    await Message.create(messages);
+    console.log("Data Imported...".green.inverse);
     process.exit();
   } catch (err) {
     console.error(err);
@@ -43,19 +52,19 @@ const importData = async () => {
 // Delete data
 const deleteData = async () => {
   try {
-    
     await User.deleteMany();
-    
-
-    console.log('Data Destroyed...'.red.inverse);
+    await CollectPoint.deleteMany();
+    await Collect.deleteMany();
+    await Message.deleteMany();
+    console.log("Data Destroyed...".red.inverse);
     process.exit();
   } catch (err) {
     console.error(err);
   }
 };
 
-if (process.argv[2] === '-i') {
+if (process.argv[2] === "-i") {
   importData();
-} else if (process.argv[2] === '-d') {
+} else if (process.argv[2] === "-d") {
   deleteData();
 }
