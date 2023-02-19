@@ -26,10 +26,33 @@ If you are working with several versions of NodeJS, we recommend you install [nv
 
 This project includes five endpoints that you will be able to use: 
 
-- `http://localhost:8080/users` - listing all users in database. 
+- `http://localhost:8080/krysto-go/api/v1/collects` 
+- `http://localhost:8080/krysto-go/api/v1/auth` 
+- `http://localhost:8080/krysto-go/api/v1/collectpoints`  
+- `http://localhost:8080/krysto-go/api/v1/messages` 
+- `http://localhost:8080/krysto-go/api/v1/collects` - should be authenticated in user by role = Admin
 
-- `http://localhost:8080/users/${userId}` - retrieves information from a user. This first endpoint includes the user id, user information (first name, last name ect ...),
+
 
 
 ### 4.2 Examples of queries
 
+
+
+
+	    `"email": "admin@gmail.com",
+		"password": "123456" 
+        `
+
+		
+	
+		"email": "partner@gmail.com"
+		"password": "123456"
+
+
+
+		"email": "staff@gmail.com",
+		"password": "123456"
+
+	
+	
