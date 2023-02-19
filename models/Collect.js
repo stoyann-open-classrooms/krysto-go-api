@@ -23,6 +23,10 @@ const CollectSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
     },
+    assigned: {
+      type: Boolean,
+      default: false
+    },
 
     collectDemandeDate: {
       type: Date,

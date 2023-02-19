@@ -19,7 +19,7 @@ exports.getCollects = asyncHandler(async (req, res, next) => {
 //@ route:          GET /krysto/api/v1/collects/:id
 //@access:          Public
 exports.getCollect = asyncHandler(async (req, res, next) => {
-  const collect = await Collect.findById(req.params.id);
+  const collect = await Collect.findById(req.params.id).populate('collectPoint');
   if (!collect) {
     return next(
       new ErrorResponse(`Collect not found with ID of ${req.params.id}`, 404)

@@ -2,21 +2,24 @@
     {
       "_id": "637a2e4122b12690420041a1",
       "collectPoint": "637a2e4122b12690420041c2",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
 
     },
     {
       "_id": "637a2e4122b12690420041a2",
       "collectPoint": "637a2e4122b12690420041c2",
       "status": "done",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
       
     },
     {
       "_id": "637a2e4122b12690420041a3",
       "collectPoint": "637a2e4122b12690420041c2",
       "status": "done",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
       
     },
     {
@@ -24,34 +27,43 @@
       "collectPoint": "637a2e4122b12690420041c3",
       "status": "fail",
       "remarque": "Entrprise fermée (vaccances)",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
       
     },
   
     {
       "_id": "637a2e4122b12690420041a5",
       "collectPoint": "637a2e4122b12690420041c3",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
       
     },
     {
       "_id": "637a2e4122b12690420041a6",
       "collectPoint": "637a2e4122b12690420041c3",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
      
     },
   
     {
       "_id": "637a2e4122b12690420041a7",
       "collectPoint": "637a2e4122b12690420041c3",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
      
     },
     {
       "_id": "637a2e4122b12690420041a8",
       "collectPoint": "637a2e4122b12690420041c3",
-      "assignedTo": "5d7a514b5d2c12c7449be014"
+      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assigned": true
      
+    },
+    {
+      "_id": "637a2e4122b12690420041a9",
+      "collectPoint": "637a2e4122b12690420041c3"
     }
   
   ]
