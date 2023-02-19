@@ -39,18 +39,17 @@ This project includes five endpoints that you will be able to use:
 
 
 
-
-	    `"email": "admin@gmail.com",
+### USER 1 role STAFF
+	    "email": "admin@gmail.com",
 		"password": "123456" 
-        `
 
 		
-	
+### USER 2 role PARTNER
 		"email": "partner@gmail.com"
 		"password": "123456"
 
 
-
+### USER 3 role STAFF
 		"email": "staff@gmail.com",
 		"password": "123456"
 
