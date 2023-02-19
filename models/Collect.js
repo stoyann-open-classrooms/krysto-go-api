@@ -7,32 +7,30 @@ const CollectSchema = new mongoose.Schema(
       ref: "CollectPoint",
     },
 
-   
     remarque: {
-        type: String,
-        maxlength: [500, "Remarque can not be more than 500 characters"],
-        default: "Aucune remarque",
-      },
- 
-      status: {
-        type: String,
-        enum: ["todo", "done", "fail"],
-        default: "todo",
-      },
+      type: String,
+      maxlength: [500, "Remarque can not be more than 500 characters"],
+      default: "Aucune remarque",
+    },
 
+    status: {
+      type: String,
+      enum: ["todo", "done", "fail"],
+      default: "todo",
+    },
 
-      user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-       
-      },
+    assignedTo: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
 
-    collectDate: {
+    collectDemandeDate: {
       type: Date,
       default: Date.now,
     },
-
-    
+    collectDate: {
+      type: Date,
+    },
   },
   { timestamps: true }
 );

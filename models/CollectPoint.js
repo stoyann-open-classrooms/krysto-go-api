@@ -17,6 +17,10 @@ const CollectPointSchema = new mongoose.Schema(
       default: "Papier",
     },
 
+    partnerName: {
+      type: String,
+      required: [true, "Merci d'ajouter le nom du client"],
+    },
     address: {
       type: String,
       required: [true, "Please add an address"],

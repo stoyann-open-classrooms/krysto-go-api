@@ -3,7 +3,7 @@
 		"_id": "5d7a514b5d2c12c7449be012",
 		"name": "Admin Account",
 		"email": "admin@gmail.com",
-		"role": "staff",
+		"role": "admin",
 		"password": "123456"
 	},
 	{
@@ -21,7 +21,5 @@
 		"role": "staff",
 		"password": "123456"
 	}
-	
-	
 	
 ]

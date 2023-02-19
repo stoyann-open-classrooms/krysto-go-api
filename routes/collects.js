@@ -8,13 +8,9 @@ const advancedResults = require('../middlewares/advancedResults')
 
 
 
-
-
-
-
 router.route("/").get(advancedResults(Collect, {
     path: "collectPoint",
-    select: "waste",
+
 }), getCollects).post(createCollect)
 router.route("/:id").get(getCollect).put(updateCollect)
 
