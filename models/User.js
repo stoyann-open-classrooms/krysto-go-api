@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please add a name"],
     },
+    compagny: {
+      compagnyName: String,
+      ridet: String
+    },
 
     email: {
       type: String,
@@ -23,6 +27,12 @@ const UserSchema = new mongoose.Schema(
       type: String,
       enum: ["partner", "staff", "admin"],
       default: "partner",
+    },
+    contact: {
+      firstname: String,
+      lastname: String,
+      function: String,
+      phone: String,
     },
 
     password: {

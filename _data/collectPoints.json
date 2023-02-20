@@ -6,7 +6,6 @@
       "partnerName": "Square",
       "address": "5 RUE DU MARECHAL LECLERC 98800 NOUMEA",
       "waste": "Plastique"
-
     },
     {
       "_id": "637a2e4122b12690420041c2",
@@ -19,10 +18,19 @@
     {
       "_id": "637a2e4122b12690420041c3",
       "user": "5d7a514b5d2c12c7449be013",
-      "description": "point de collecte privée square",
+      "description": "Box des capsules à cafè dans le bureau open space (1er porte a droite)",
       "partnerName": "Square",
       "address": "5 RUE DU MARECHAL LECLERC 98800 NOUMEA",
       "waste": "Capsule"
+    }
+    ,
+    {
+      "_id": "637a2e4122b12690420041c5",
+      "user": "5d7a514b5d2c12c7449be013",
+      "description": "box sceler a récuperer dans le bureau du dirigeant (demander gregory)",
+      "partnerName": "Square",
+      "address": "5 RUE DU MARECHAL LECLERC 98800 NOUMEA",
+      "waste": "Papier-confidentiels"
     }
   ,
     {
@@ -32,6 +40,15 @@
       "description": "point de collecte papier demander a la réception pour récuperer le bac",
       "address": "5 RUE DU MARECHAL LECLERC 98800 NOUMEA",
       "waste": "Papier"
+    }
+  ,
+    {
+      "_id": "637a2e4122b12690420041c4",
+      "user": "5d7a514b5d2c12c7449be015",
+      "partnerName": "Optic Disount",
+      "description": "point de collecte plastique déchets liée a la production de lunettes",
+      "address": "1 rue Anatole France, 98800 Nouméa",
+      "waste": "Plastique"
     }
   
   ]

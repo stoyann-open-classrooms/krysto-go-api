@@ -16,6 +16,15 @@
       "email": "samuel@mail.com",
       "message": "donner moi plus de renseignement sur  ce que vous faite  et vos tarifs svp",
       "status": "Archived"
+    },
+    {
+      "_id": "637a3694e5fc335f796a4957",
+      "object": "demande de devis",
+      "name": "Nicolas",
+      "lastname": "Troboas",
+      "compagny": "Le froid",
+      "email": "lefroid@mail.com",
+      "message": "bonjour nous aimerions obtenir un devis pour la mise en place de bac de tri papier dans nos bureaux"
     }
   ]
   

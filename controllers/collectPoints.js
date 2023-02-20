@@ -138,16 +138,6 @@ exports.collectPointQrUpload = asyncHandler(async (req, res, next) => {
       );
     }
   
-    // // Make sure user is user owner
-    // if (user.user.toString() !== req.user.id && req.user.role !== 'admin') {
-    //   return next(
-    //     new ErrorResponse(
-    //       `user ${req.params.id} is not authorized to update this collect point`,
-    //       401
-    //     )
-    //   );
-    // }
-  
     if (!req.files) {
       return next(new ErrorResponse(`Please upload a file`, 400));
     }

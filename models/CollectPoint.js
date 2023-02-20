@@ -13,7 +13,7 @@ const CollectPointSchema = new mongoose.Schema(
 
     waste: {
       type: String,
-      enum: ["Plastique", "Capsule", "Papier"],
+      enum: ["Plastique", "Capsule", "Papier", "Papier-confidentiels"],
       default: "Papier",
     },
 

@@ -34,7 +34,17 @@ exports.createMessage = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.updateMessage = asyncHandler(async (req, res, next) => {
+  const message = await Message.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
 
+  res.status(200).json({
+    success: true,
+    data: message
+  });
+});
 
 //@description:     Delete a message
 //@ route:          DELETE /krysto/api/v1/messages/:id

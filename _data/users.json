@@ -4,22 +4,75 @@
 		"username": "Admin Account",
 		"email": "admin@gmail.com",
 		"role": "admin",
-		"password": "123456"
+		"password": "123456",
+		"contact": {
+			"firstname": "Stoyann",
+			"lastname": "velten",
+			"function": "dirigeant",
+			"phone": "939253"
+		  }
 	},
 	{
 		"_id": "5d7a514b5d2c12c7449be013",
 		"username": "Partner Account",
 		"email": "partner@gmail.com",
+		"compagny": {
+			"compagnyName" : "Square",
+			"ridet" : "532374"
+
+		},
 		"role": "partner",
-		"password": "123456"
+		"password": "123456",
+		"contact": {
+			"firstname": "Gregory",
+			"lastname": "Beghain",
+			"function": "directeur génèral",
+			"phone": "902626"
+		  }
+	},
+	{
+		"_id": "5d7a514b5d2c12c7449be015",
+		"username": "Optic Discount",
+		"compagny": {
+			"compagnyName" : "Optic Discount",
+			"ridet" : "441591"
+		},
+		"email": "optic@gmail.com",
+		"role": "partner",
+		"password": "123456",
+		"contact": {
+			"firstname": "Harold",
+			"lastname": "Courtot",
+			"function": "gerant",
+			"phone": "300340"
+		  }
 	},
 
 	{
 		"_id": "5d7a514b5d2c12c7449be014",
-		"username": "staff Account",
+		"username": "Aska",
 		"email": "staff@gmail.com",
 		"role": "staff",
-		"password": "123456"
+		"password": "123456",
+		"contact": {
+			"firstname": "Aska",
+			"lastname": "Laigret",
+			"function": "Employé polyvalent",
+			"phone": "907026"
+		  }
+	},
+	{
+		"_id": "5d7a514b5d2c12c7449be011",
+		"username": "samuel",
+		"email": "samuel@gmail.com",
+		"role": "staff",
+		"password": "123456",
+		"contact": {
+			"firstname": "Samuel",
+			"lastname": "Jodar",
+			"function": "Employé polyvalent",
+			"phone": "907526"
+		  }
 	}
 	
 ]

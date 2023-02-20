@@ -1,17 +1,16 @@
 [
     {
       "_id": "637a2e4122b12690420041a1",
-      "collectPoint": "637a2e4122b12690420041c2",
-      "assignedTo": "5d7a514b5d2c12c7449be014",
-      "assigned": true
-
+      "collectPoint": "637a2e4122b12690420041c2"
     },
     {
       "_id": "637a2e4122b12690420041a2",
       "collectPoint": "637a2e4122b12690420041c2",
       "status": "done",
       "assignedTo": "5d7a514b5d2c12c7449be014",
-      "assigned": true
+      "assigned": true,
+      "collectDemandeDate": "2023-01-10",
+      "quantityCollected": 10
       
     },
     {
@@ -19,7 +18,8 @@
       "collectPoint": "637a2e4122b12690420041c2",
       "status": "done",
       "assignedTo": "5d7a514b5d2c12c7449be014",
-      "assigned": true
+      "assigned": true,
+      "quantityCollected": 5
       
     },
     {
@@ -35,9 +35,9 @@
     {
       "_id": "637a2e4122b12690420041a5",
       "collectPoint": "637a2e4122b12690420041c3",
-      "assignedTo": "5d7a514b5d2c12c7449be014",
+      "assignedTo": "5d7a514b5d2c12c7449be012",
       "assigned": true
-      
+    
     },
     {
       "_id": "637a2e4122b12690420041a6",

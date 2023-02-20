@@ -35,6 +35,9 @@ const CollectSchema = new mongoose.Schema(
     collectDate: {
       type: Date,
     },
+    quantityCollected:{
+      type: Number
+    }
   },
   { timestamps: true }
 );

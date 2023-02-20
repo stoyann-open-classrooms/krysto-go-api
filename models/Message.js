@@ -38,11 +38,11 @@ const MessageSchema = new mongoose.Schema(
         type: String ,
         required: true,
         enum: [
-          "not read",
+          "not_read",
           "Archived",
           
         ],
-        default: "not read"
+        default: "not_read"
       },
    
   },
