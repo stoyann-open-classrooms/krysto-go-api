@@ -2,7 +2,7 @@ const path = require("path");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
 const geocoder = require("../utils/geocoder");
-const User = require("../models/User");
+
 const CollectPoint = require("../models/CollectPoint");
 
 //@description:     Get all collect points
@@ -16,7 +16,7 @@ exports.getCollectPoints = asyncHandler(async (req, res, next) => {
 //@ route:          GET /krysto/api/v2/collectPoints/:id
 //@access:          Public
 exports.getCollectPoint = asyncHandler(async (req, res, next) => {
-  const collectPoint = await CollectPoint.findById(req.params.id).populate("collects");
+  const collectPoint = await CollectPoint.findById(req.params.id).populate("collects user");
   if (!collectPoint) {
     return next(
       new ErrorResponse(`Collect Point not found with ID of ${req.params.id}`, 404)

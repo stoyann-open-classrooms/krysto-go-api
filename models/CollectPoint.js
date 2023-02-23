@@ -11,16 +11,25 @@ const CollectPointSchema = new mongoose.Schema(
     },
    
 
-    waste: {
+    waste: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Waste",
+      required: true
+      }],
+    
+  
+
+    collectFrequency: {
       type: String,
-      enum: ["Plastique", "Capsule", "Papier", "Papier-confidentiels"],
-      default: "Papier",
+      enum: ["Sur demande", "Journalier", "Hebdomadaires", "Mensuel", "Bi-mensuel"],
+      default: "Sur demande",
     },
 
     partnerName: {
       type: String,
       required: [true, "Merci d'ajouter le nom du client"],
     },
+
     address: {
       type: String,
       required: [true, "Please add an address"],
@@ -80,6 +89,8 @@ CollectPointSchema.pre("save", async function (next) {
   this.address = undefined;
   next();
 });
+
+
 
 // reverse populate with virtuals
 

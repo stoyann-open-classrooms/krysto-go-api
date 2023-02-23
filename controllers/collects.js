@@ -4,6 +4,7 @@ const asyncHandler = require("../middlewares/async");
 
 const Collect = require("../models/Collect");
 const CollectPoint = require("../models/CollectPoint");
+const User = require("../models/User");
 
 //@description:     Get all collects
 //@ route:          GET /krysto/api/v1/collects
@@ -19,7 +20,7 @@ exports.getCollects = asyncHandler(async (req, res, next) => {
 //@ route:          GET /krysto/api/v1/collects/:id
 //@access:          Public
 exports.getCollect = asyncHandler(async (req, res, next) => {
-  const collect = await Collect.findById(req.params.id).populate('collectPoint');
+  const collect = await Collect.findById(req.params.id).populate('collectPoint certificat');
   if (!collect) {
     return next(
       new ErrorResponse(`Collect not found with ID of ${req.params.id}`, 404)
@@ -27,6 +28,29 @@ exports.getCollect = asyncHandler(async (req, res, next) => {
   }
   res.status(200).json({ success: true, data: collect });
 });
+
+//@description:     Create a collect
+//@ route:          POST /krysto/api/v2/collectPoints/:collectPointId/collects
+//@access:          Private
+exports.createCollect = asyncHandler(async (req, res, next) => {
+    req.body.collectPoint = req.params.collectPointId;
+
+    const collectPoint = await CollectPoint.findById(req.params.collectPointId);
+  
+    if (!collectPoint) {
+      return next(
+        new ErrorResponse(`No collectPoint with the id of ${req.params.partnerId}`),
+        404
+      );
+    }
+  
+    const collect = await Collect.create(req.body);
+  
+    res.status(200).json({
+      success: true,
+      data: collect,
+    });
+  });
 
 //@description:     Create a collect
 //@ route:          POST /krysto/api/v2/collectPoints/:collectPointId/collects

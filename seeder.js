@@ -12,6 +12,8 @@ const User = require("./models/User");
 const CollectPoint = require("./models/CollectPoint");
 const Collect = require('./models/Collect');
 const Message = require('./models/Message');
+const Certificat = require('./models/Certificat');
+const Waste = require('./models/Waste');
 // Connect to DB
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URI, {
@@ -35,6 +37,13 @@ const messages = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/messages.json`, 'utf-8')
 );
 
+const certificats = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/Certificat.json`, 'utf-8')
+);
+const wastes = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/wastes.json`, 'utf-8')
+);
+
 // Import into DB
 const importData = async () => {
   try {
@@ -42,6 +51,8 @@ const importData = async () => {
     await CollectPoint.create(collectPoints);
     await Collect.create(collects);
     await Message.create(messages);
+    await Certificat.create(certificats);
+    await Waste.create(wastes);
     console.log("Data Imported...".green.inverse);
     process.exit();
   } catch (err) {
@@ -56,6 +67,8 @@ const deleteData = async () => {
     await CollectPoint.deleteMany();
     await Collect.deleteMany();
     await Message.deleteMany();
+    await Certificat.deleteMany();
+    await Waste.deleteMany();
     console.log("Data Destroyed...".red.inverse);
     process.exit();
   } catch (err) {

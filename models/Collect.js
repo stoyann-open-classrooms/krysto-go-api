@@ -7,6 +7,7 @@ const CollectSchema = new mongoose.Schema(
       ref: "CollectPoint",
     },
 
+
     remarque: {
       type: String,
       maxlength: [500, "Remarque can not be more than 500 characters"],
@@ -32,14 +33,33 @@ const CollectSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+
+
     collectDate: {
       type: Date,
     },
+    
     quantityCollected:{
       type: Number
     }
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 );
+
+
+
+
+// reverse populate with virtuals
+
+CollectSchema.virtual("certificat", {
+  ref: "Certificat",
+  localField: "_id",
+  foreignField: "collect",
+  justOne: true,
+});
 
 module.exports = mongoose.model("Collect", CollectSchema);

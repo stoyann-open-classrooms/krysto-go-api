@@ -13,6 +13,13 @@ const UserSchema = new mongoose.Schema(
       compagnyName: String,
       ridet: String
     },
+    agent: {
+      codeAgent: String,
+      cafat: String,
+      contrat: String,
+      function: String,
+      tauxHorraire: String,
+    },
 
     email: {
       type: String,
@@ -25,14 +32,17 @@ const UserSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["partner", "staff", "admin"],
+      enum: ["partner", "staff", "admin", "recycler"],
       default: "partner",
     },
+
     contact: {
+
       firstname: String,
       lastname: String,
       function: String,
       phone: String,
+      address: String
     },
 
     password: {
@@ -54,7 +64,14 @@ const UserSchema = new mongoose.Schema(
 );
 
 
+// reverse populate with virtuals
 
+UserSchema.virtual("collectPoints", {
+  ref: "CollectPoint",
+  localField: "_id",
+  foreignField: "user",
+  justOne: false,
+});
 
 
 // Encrypt password using bcrypt

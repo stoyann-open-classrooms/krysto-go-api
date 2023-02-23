@@ -13,7 +13,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
 // @route     GET /api/v1/auth/users/:id
 // @access    Private/Admin
 exports.getUser = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findById(req.params.id).populate("collectPoints");
 
   res.status(200).json({
     success: true,
@@ -66,7 +66,7 @@ exports.deleteUser = asyncHandler(async (req, res, next) => {
 // @route     POST /api/v2/auth/me
 // @access    Private
 exports.getMe = asyncHandler(async (req, res, next) => {
-  const user = await User.findById(req.user.id);
+  const user = await User.findById(req.user.id).populate("collectPoints");
 
   res.status(200).json({
     success: true,
