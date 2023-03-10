@@ -1,6 +1,7 @@
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require("../middlewares/async");
 const User = require('../models/User');
+const sendEmail = require("../utils/sendEmail");
 
 // @desc      Get all users
 // @route     GET /api/v1/auth/users
@@ -26,6 +27,26 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 // @access    Private/Admin
 exports.createUser = asyncHandler(async (req, res, next) => {
   const user = await User.create(req.body);
+
+
+  const message = `Votre compte KRYSTO vient d'être créer ! vous pouvez désormais vous connecter a votre espace client sur le site www.krysto.nc 
+  avec les identifiants suivant : email : ${req.body.email} password: ${req.body.password} n'oubliez pas de changer votre mots de passe `;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: `Création de votre compte ${req.body.role} Krysto`,
+      message,
+     
+    });
+    res.status(200).json({ success: true, data: "Email sent" });
+  } catch (err) {
+    console.log(err);
+   
+   
+
+    return next(new ErrorResponse("Email could not be sent", 500));
+  }
 
   res.status(201).json({
     success: true,

@@ -15,7 +15,7 @@ router.use('/:collectPointId/collects', collectRouter)
 
 
 router.route("/radius/:zipcode/:distance").get(getCollectPointsInRadius);
-router.route("/").get(advancedResults(CollectPoint, 'collects user'),getCollectPoints).post(protect , authorize('partners', "admin"), createCollectPoint);
+router.route("/").get(advancedResults(CollectPoint, 'collects user'),getCollectPoints).post( createCollectPoint);
 router.route("/:id").get(getCollectPoint).put(protect, authorize("staff") ,updateCollectPoint).delete( deleteCollectPoint);
 
 router.route('/:id/qr').put(collectPointQrUpload)

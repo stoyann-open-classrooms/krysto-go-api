@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
 const geocoder = require("../utils/geocoder");
+const Collect = require('./Collect')
 
 const CollectPointSchema = new mongoose.Schema(
   {
@@ -8,32 +9,36 @@ const CollectPointSchema = new mongoose.Schema(
       type: String,
       required: [true, "Aucune déscription"],
       maxlength: [500, "Name can not be more than 500 characters"],
+      default: "aucune description"
     },
    
 
-    waste: [{
+
+    waste: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Waste",
       required: true
-      }],
+      },
     
-  
+      box: {
+        type: String,
+        enum: ["Maxigo", "Minigo", "Kadnabox", "PaperBox", "Autre"],
+        default: "Maxigo",
+      },
+    
 
-    collectFrequency: {
-      type: String,
-      enum: ["Sur demande", "Journalier", "Hebdomadaires", "Mensuel", "Bi-mensuel"],
-      default: "Sur demande",
-    },
-
+      
     partnerName: {
       type: String,
-      required: [true, "Merci d'ajouter le nom du client"],
+   
     },
 
     address: {
       type: String,
-      required: [true, "Please add an address"],
+    required: [true, "Please add an address"],
     },
+
+
     qrCode: {
       type: String,
       default: "no-photo.png",
@@ -55,8 +60,12 @@ const CollectPointSchema = new mongoose.Schema(
       zipcode: String,
       country: String,
     },
+ 
 
-    recycled: Number,
+    totalRecycled: Number,
+
+
+
 
     user: {
       type: mongoose.Schema.ObjectId,
@@ -85,8 +94,8 @@ CollectPointSchema.pre("save", async function (next) {
     country: loc[0].countryCode,
   };
 
-  // Do not save address in DB
-  this.address = undefined;
+  // // Do not save address in DB
+  // this.address = undefined;
   next();
 });
 
@@ -100,5 +109,7 @@ CollectPointSchema.virtual("collects", {
   foreignField: "collectPoint",
   justOne: false,
 });
+
+
 
 module.exports = mongoose.model("CollectPoint", CollectPointSchema);

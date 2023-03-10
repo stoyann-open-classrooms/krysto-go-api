@@ -7,13 +7,11 @@ const WasteSchema = new mongoose.Schema(
       enum: [
         "Aluminium",
         "Plastique",
-        "Huile",
         "Papier",
         "Carton",
         "Déchets alimentaire",
         "Papier confidentiel",
         "Verre",
-        "Bois",
         "Capsule"
       ],
       required: [true, "Merci d'ajouter un type de dechets"],
@@ -32,8 +30,10 @@ const WasteSchema = new mongoose.Schema(
         "HDPE",
         "PEHD",
         "PS",
+        "PVC",
         "PLA",
-        "Autres"
+        "Autres",
+        "MIX",
       ],
     },
 
@@ -43,8 +43,8 @@ const WasteSchema = new mongoose.Schema(
 
     détails: {
       type: String,
-      maxlength: [500, "Remarque can not be more than 5000 characters"],
-      default: "Aucune remarque",
+      maxlength: [100, "Remarque can not be more than 100 characters"],
+      default: "Aucun détail pour ce déchets", 
     },
   },
   {

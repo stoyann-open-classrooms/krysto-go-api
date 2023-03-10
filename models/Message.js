@@ -9,9 +9,15 @@ const MessageSchema = new mongoose.Schema(
       trim: true,
       maxlength: [50, "Name can not be more than 30 characters"],
     },
+
     name: {
         type: String,
         required: [true, "Please add name"],
+        trim: true,
+        maxlength: [30, "Name can not be more than 30 characters"],
+      },
+    lastname: {
+        type: String,
         trim: true,
         maxlength: [30, "Name can not be more than 30 characters"],
       },
@@ -22,6 +28,11 @@ const MessageSchema = new mongoose.Schema(
         trim: true,
         maxlength: [30, "Compagny can not be more than 50 characters"],
       },
+    function: {
+        type: String,
+        trim: true,
+        maxlength: [30, "function can not be more than 50 characters"],
+      },
       email: {
         type: String,
         match: [
@@ -29,6 +40,7 @@ const MessageSchema = new mongoose.Schema(
           "Please add a valid email",
         ],
       },
+      
     message: {
       type: String,
       maxlength: [5000, "Message can not be more than 5000 characters"],
@@ -40,7 +52,6 @@ const MessageSchema = new mongoose.Schema(
         enum: [
           "not_read",
           "Archived",
-          
         ],
         default: "not_read"
       },

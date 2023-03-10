@@ -31,7 +31,7 @@ exports.getCollectPoint = asyncHandler(async (req, res, next) => {
 //@access:          Private
 exports.createCollectPoint = asyncHandler(async (req, res, next) => {
     // Add user to req.body
-    req.body.user = req.user.id;
+  
   
     // // Check for published partner
     // const publishedUser = await CollectPoint.findOne({ user: req.user.id });
